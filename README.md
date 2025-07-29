@@ -184,9 +184,18 @@ use Stevebauman\Purify\Casts\PurifyHtmlOnGet;
 
 class Post extends Model
 {
+    // Laravel <= 10.x
     protected $casts = [
         'content' => PurifyHtmlOnGet::class,
     ];
+
+    // Laravel >= 11.x
+    protected function casts()
+    {
+        return [
+            'content' => PurifyHtmlOnGet::class,
+        ];
+    }
 }
 ```
 
@@ -219,9 +228,18 @@ You can even configure the configuration that is used when casting by appending 
 ```
 
 ```php
+// Laravel <= 10.x
 protected $casts = [
-    'content' => PurifyHtmlOnGet::class.':other',
+    'content' => PurifyHtmlOnGet::class,
 ];
+
+// Laravel >= 11.x
+protected function casts()
+{
+    return [
+        'content' => PurifyHtmlOnGet::class,
+    ];
+}
 ```
 
 This helps tremendously if you change your sanization requirements later down
