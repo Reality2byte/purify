@@ -230,14 +230,14 @@ You can even configure the configuration that is used when casting by appending 
 ```php
 // Laravel <= 10.x
 protected $casts = [
-    'content' => PurifyHtmlOnGet::class,
+    'content' => PurifyHtmlOnGet::class.':other',
 ];
 
 // Laravel >= 11.x
 protected function casts()
 {
     return [
-        'content' => PurifyHtmlOnGet::class,
+        'content' => PurifyHtmlOnGet::class.':other',
     ];
 }
 ```
