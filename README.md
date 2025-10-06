@@ -464,7 +464,7 @@ You're all set!
 
 ### Upgrading from v5 to v6
 
-In v6, the HTMLPurifier Serializer storage mechanism was updated for Laravel Vapour support, allowing 
+In v6, the HTMLPurifier Serializer storage mechanism was updated for Laravel Vapor support, allowing 
 you to store the serialized HTMLPurifier definitions in a Redis cache, or an external filesystem.
 
 To upgrade from v5, install the latest version by running the below command in the root of your project:
